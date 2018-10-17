@@ -19,7 +19,7 @@ public class AccountServiceImpl implements AccountService {
     public void transfer(final String outer, final String inner, final Integer money) {
         accountDao.out(outer, money);
         //断电
-        int i = 1 / 0;
+//        int i = 1 / 0;
         accountDao.in(inner, money);
     }
 
