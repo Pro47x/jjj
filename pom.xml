@@ -6,7 +6,11 @@
 
     <groupId>pro47x</groupId>
     <artifactId>my_spring_demo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>mybatis_demo</module>
+    </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
         <dependency>
