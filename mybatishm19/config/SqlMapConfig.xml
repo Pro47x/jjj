@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- 加载java的配置文件或者声明属性信息 -->
 	<properties resource="db.properties">
-		<property name="db.username" value="123" />
+		<property name="db.userName" value="123" />
 	</properties>
 
 	<!-- <settings></settings> -->
@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<dataSource type="POOLED">
 				<property name="driver" value="${db.driver}" />
 				<property name="url" value="${db.url}" />
-				<property name="username" value="${db.username}" />
+				<property name="userName" value="${db.userName}" />
 				<property name="password" value="${db.password}" />
 			</dataSource>
 		</environment>

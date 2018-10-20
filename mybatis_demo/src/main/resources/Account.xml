@@ -17,6 +17,6 @@
 
         select *
         from account
-        where username LIKE '%${value}%'
+        where userName LIKE '%${value}%'
     </select>
 </mapper>

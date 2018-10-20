@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- ${}这种写法存在sql注入的风险，所以要慎用！！但是在一些场景下，必须使用${}，比如排序时，动态传入排序的列名，${}会原样输出，不加解释 -->
 	<select id="findUsersByName" parameterType="java.lang.String"
 		resultType="com.itheima.mybatis.po.User">
-		SELECT * FROM USER WHERE username LIKE '%${value}%'
+		SELECT * FROM USER WHERE userName LIKE '%${value}%'
 	</select>
 
 	<!-- 添加用户 -->
@@ -36,8 +36,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</selectKey>
 	
 		INSERT INTO USER
-		(username,birthday,sex,address)
-		VALUES(#{username},#{birthday},#{sex},#{address})
+		(userName,birthday,sex,address)
+		VALUES(#{userName},#{birthday},#{sex},#{address})
 	</insert>
 	
 	<!-- 自增主键之UUID -->
@@ -47,8 +47,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</selectKey>
 	
 		INSERT INTO USER
-		(id,username,birthday,sex,address)
-		VALUES(#{id},#{username},#{birthday},#{sex},#{address})
+		(id,userName,birthday,sex,address)
+		VALUES(#{id},#{userName},#{birthday},#{sex},#{address})
 	</insert>
 	
 	<!-- 自增主键之UUID -->
@@ -58,8 +58,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</selectKey>
 	
 		INSERT INTO USER
-		(id,username,birthday,sex,address)
-		VALUES(#{id},#{username},#{birthday},#{sex},#{address})
+		(id,userName,birthday,sex,address)
+		VALUES(#{id},#{userName},#{birthday},#{sex},#{address})
 	</insert>
 </mapper>
 

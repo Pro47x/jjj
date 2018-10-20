@@ -17,8 +17,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</selectKey>
 
 		INSERT INTO USER
-		(username,birthday,sex,address)
-		VALUES(#{username},#{birthday},#{sex},#{address})
+		(userName,birthday,sex,address)
+		VALUES(#{userName},#{birthday},#{sex},#{address})
 	</insert>
 
 	<!-- 定义sql片段 -->
@@ -28,8 +28,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<!-- if标签：可以对输入的参数进行判断 -->
 		<!-- test:指定判断表达式 -->
 		<if test="user != null">
-			<if test="user.username != null and user.username != ''">
-				AND username LIKE '%${user.username}%'
+			<if test="user.userName != null and user.userName != ''">
+				AND userName LIKE '%${user.userName}%'
 			</if>
 			<if test="user.sex != null and user.sex != ''">
 				AND sex = #{user.sex}
@@ -79,12 +79,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- result标签：映射查询结果中的普通列 -->
 	<resultMap type="user" id="UserRstMap">
 		<id column="id_" property="id" />
-		<result column="username_" property="username" />
+		<result column="username_" property="userName" />
 		<result column="sex_" property="sex" />
 	</resultMap>
 
 	<select id="findUserRstMap" parameterType="int" resultMap="UserRstMap">
-		Select id id_,username username_,sex sex_ from user where id = #{id}
+		Select id id_,userName username_,sex sex_ from user where id = #{id}
 	</select>
 </mapper>
 
